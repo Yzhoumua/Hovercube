@@ -1,0 +1,192 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root,body{
+    height: 100%;
+}
+.wapper{
+    position: relative;
+    width: 700px;
+    left: calc(50% - 350px);
+    padding-top:250px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     align-self: center;
+}
+.wapper .seebox{
+    width: 150px;
+    perspective: 500px;
+    margin: 10px 0;
+}
+.wapper .seebox .box{
+    height:150px;
+    width:150px;
+    transform-style: preserve-3d;
+    transform-origin: center center -75px;
+   
+}
+.wapper .seebox .box .cont{
+    font-size: 0;
+    position: absolute;
+   
+}
+.wapper .seebox .box .cont img{
+    height:150px;
+    width:150px;
+}
+.wapper .seebox .box .text{
+    position: absolute;
+    background: #000;
+    font-size: 30px;
+    text-align: center;
+    width:150px;
+    height:150px;
+    line-height:150px;
+    color: #fff;
+    z-index: -1;
+}
+
+/* 上入 */
+.wapper .seebox .box.on-top .text{
+    transform: translateY(-100%) rotateX(90deg);
+    transform-origin: 0 100%;
+}
+.wapper .seebox .box.to-top .text{
+    transform: translateY(-100%) rotateX(90deg);
+    transform-origin: 0 100%;
+}
+.wapper .seebox .box.to-top {
+    animation: totop linear 0.2s forwards;
+}
+.wapper .seebox .box.on-top{
+    animation: ontop linear 0.2s forwards;
+  
+}
+@keyframes ontop{
+    0%{
+        transform: rotateX(360deg);
+    }
+    100%{
+       
+        transform: rotateX(270deg);
+    }
+}
+@keyframes totop{
+    0%{
+       
+        transform: rotateX(270deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
+
+/* 下入 */
+.wapper .seebox .box.on-bottom .text{
+    transform: translateY(100%) rotateX(-90deg);
+    transform-origin:100% 0;
+}
+.wapper .seebox .box.to-bottom .text{
+    transform: translateY(100%) rotateX(-90deg);
+    transform-origin: 100% 0;
+}
+.wapper .seebox .box.to-bottom {
+    animation: tobottom linear 0.2s forwards;
+}
+.wapper .seebox .box.on-bottom{
+    animation: onbottom linear 0.2s forwards;
+  
+} 
+@keyframes onbottom{
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+       
+        transform: rotateX(90deg);
+    }
+}
+@keyframes tobottom{
+    0%{
+       
+        transform: rotateX(90deg);
+    }
+    100%{
+        transform: rotateX(0deg);
+    }
+}
+
+/* 右入 */
+
+.wapper .seebox .box.on-right .text{
+    transform: translateX(100%) rotateY(90deg);
+    transform-origin:0 0;
+}
+.wapper .seebox .box.to-right .text{
+    transform: translateX(100%) rotateY(90deg);
+    transform-origin:0 0;
+} 
+.wapper .seebox .box.to-right {
+    animation: toright linear 0.2s forwards;
+}
+.wapper .seebox .box.on-right{
+    animation: onright linear 0.2s forwards;
+  
+} 
+@keyframes onright{
+    0%{
+        transform: rotateY(360deg);
+    }
+    100%{
+       
+        transform: rotateY(270deg);
+    }
+}
+@keyframes toright{
+    0%{
+       
+        transform: rotateY(270deg);
+    }
+    100%{
+        transform: rotateY(360deg);
+    }
+}
+
+/* 左入 */
+
+.wapper .seebox .box.on-left .text{
+    transform: translateX(-100%) rotateY(-90deg);
+    transform-origin:100% 100%;
+}
+.wapper .seebox .box.to-left .text{
+    transform: translateX(-100%) rotateY(-90deg);
+    transform-origin:100% 100%;
+} 
+.wapper .seebox .box.to-left {
+    animation: toleft linear 0.2s forwards;
+}
+.wapper .seebox .box.on-left{
+    animation: onleft linear 0.2s forwards;
+  
+} 
+
+@keyframes onleft{
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+       
+        transform: rotateY(90deg);
+    }
+}
+ @keyframes toleft{
+    0%{
+       
+        transform: rotateY(90deg);
+    }
+    100%{
+        transform: rotateY(0deg);
+    }
+} 
